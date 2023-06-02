@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@100;200&family=Playfair+Display&display=swap');
+.Card-Box{
+    background-color: #F8FAF0;
+    border-radius: 20px;
+    /* height: 20vh; */
+    /* width: 20vw; */
+    padding: 20px;
+}
+p{
+    font-size: 0.7em;
+    font-weight:550;
+    text-align: center;
+}
+#Owner{
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+@media screen and (max-width:780px) {
+    p{
+        font-size: 0.4em;
+    }
+    .Card-Box{
+       height: 15vh; 
+        width: 15vw;
+       padding: 20px;
+    }
+    #Owner{
+        font-size: 0.6em;
+    }    
+}
+@media screen and (max-width:480px) {
+    .Card-Box{
+        padding: 10px;
+     }
+     p{
+        font-size: 0.2em;
+     }
+     #Owner{
+        font-size: 0.4em;
+    }    
+}

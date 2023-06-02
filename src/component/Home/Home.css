@@ -1,0 +1,142 @@
+.slider{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image{
+    width: 100vw;
+    height:100vh;
+    z-index: -1 ;
+    position: relative;
+  }
+  .right-arrow{
+    position: absolute;
+    margin-left:93%;
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+  }
+  .left-arrow{
+    position: absolute;
+    margin-right: 93%;
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+  .slide{
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  .slideactive{
+    opacity: 1;
+    transition-duration: 1s;
+    animation: slideDown1 1s;
+  }
+  @keyframes slideDown1 {
+    from{
+        transform:translateX(40rem);
+        opacity:1;
+    }
+    to{
+        transform: translateX(0rem);
+        opacity:1;
+  
+    }}
+  /* h1{
+      margin-top: 5vh;
+      color: aqua;
+      position: absolute;
+      z-index: 1;
+    } */
+  #title1{
+      margin-top: 60vh;
+      color: #423F32;
+      font-size: 3rem;
+      margin-left: 3%;
+      position: absolute;
+      z-index: 1;
+  }
+  #title2{
+    margin-top: 70vh;
+    color: #423F32;
+    font-size: 3.9rem;
+    margin-right: 10%;
+    position: absolute;
+    z-index: 1;
+  }
+  .button{
+    margin-right: 125vh;
+    background-color: #4AA3A2;
+    color: aliceblue;
+    border-radius: 2rem;
+    border-color: #4AA3A2;
+    box-sizing: 9rem;
+    font-size: 1.5rem; 
+    border: 2px solid #4AA3A2; 
+    z-index: 1;
+    position: absolute;
+    margin-top: 82vh;
+    margin-left: 8%;
+  
+  
+  }
+  .button:hover{
+    background-color: #423F32;
+    border: 2px solid #423F32 ; 
+  }
+  .title{
+    margin-left: 10%;
+  }
+  @media screen and (max-width: 1126px) {
+    #title1{
+      font-size: 2rem;
+      
+    }
+    #title2{
+      font-size: 2rem;
+      
+    }
+    .left-arrow{
+      font-size: 2rem;
+    }
+    .right-arrow{
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 531px) {
+    #title1{
+      font-size: 1rem;
+      
+    }
+    #title2{
+      font-size: 1rem;
+      
+    }
+    .button{
+      font-size: 0.75rem;
+    }
+    .left-arrow{
+      font-size: 1rem;
+    }
+    .right-arrow{
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 331px) {
+    #title1{
+      font-size: 0.5rem;
+      
+    }
+    #title2{
+      font-size: 0.5rem;
+      
+    }
+    .button{
+      font-size: 0.5rem;
+    }}
