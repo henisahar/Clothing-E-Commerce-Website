@@ -1,0 +1,49 @@
+name: Android Debug Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  APP_NAME: "TRYNIG"
+  BUILD_TYPE: "debug"
+  SERVICE: "github"
+
+jobs:
+  build:
+    name: Build debug APK
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11' 
+        distribution: 'temurin'
+        cache: 'gradle'
+
+    - name: Validate Gradle Wrapper
+      uses: gradle/wrapper-validation-action@v2
+
+    - name: Build with Gradle
+      run: |
+        ./gradlew assembleDebug --no-daemon --stacktrace
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: TRYNIG-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+
+    - name: Show build info
+      run: |
+        echo "App: ${{ env.APP_NAME }}"
+        echo "Version: 1.0.0"
+        echo "Build type: ${{ env.BUILD_TYPE }}"
+        echo "Service: ${{ env.SERVICE }}"
